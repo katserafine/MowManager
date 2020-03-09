@@ -14,50 +14,50 @@ The 5th tool will become optionally downloadable with the implementation of the 
 ### Get up and running!
 1. Open your terminal and do the following:
 
-   // Install homebrew if not on computer
+Install homebrew if not on computer
    
-                sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  // Install github cli tools if not on computer
+Install github cli tools if not on computer
   
-                brew install git
+    brew install git
 
-  // List all files
+List all files
                 
-                ls
+    ls
 
-  // Navigate to Documents directory
+Navigate to Documents directory
   
-                cd Doc + tab key // OR
-                cd Documents
+    cd Doc + tab key // OR
+    cd Documents
 
-  // Create Dev directory
+Create Dev directory
                 
-                mkdir Dev
-                cd Dev
+    mkdir Dev
+    cd Dev
 
-  // Create dotnet directory
+Create dotnet directory
                 
-                mkdir dotnet
-                cd dotnet
+    mkdir dotnet
+    cd dotnet
 
-  // Pull github repo
+Pull github repo
                 
-                git clone https://github.com/dgonzo27/MowManager
+    git clone https://github.com/dgonzo27/MowManager
 
-  // Change into directory
+Change into directory
                 
-                cd MowManager
+    cd MowManager
 
-  // Open in VSCode (see below if first time vscode use)
+Open in VSCode (see below if first time vscode use)
                 
-                code .
+    code .
 
 If this is your first time using VSCode, the "code" command will not be recognized by your terminal application.  You will need to open VSCode and once it has loaded hit CMD + Shift + P.  A search bar will drop down from the top center of the application window.  Type "Shell Command" and several filtered results will return.  Select the one that says "Install 'code' command in PATH".  Quit the VSCode application with CMD + Q and go back to your terminal.  Run 'code .' to open your vscode editor in your current directory.
 
 2. From your terminal application, run:
 
-                docker-compose up
+       docker-compose up
 
 This will fetch the base image and explicitly defined dependencies from our Dockerfile in addition to starting and connecting your db and web server containers.
 By default, the web server should fail when trying to connect to your database, because the database being referenced does not yet exist.  
@@ -68,7 +68,7 @@ By default, the web server should fail when trying to connect to your database, 
 
 5. From your terminal application, hit:
 
-                CTRL + C
+       CTRL + C
 
 This key combo will _gracefully_ quit your application.  
 
