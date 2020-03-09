@@ -1,0 +1,32 @@
+version: '3'
+services:
+    db:
+        image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+        volumes:
+            - sqldatavol:/var/lib/sqldata
+        restart: always
+        networks:
+            - aspsqlnet
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=Sql!Expre55
+            - MSSQL_PID=Express
+    web:
+        build: .
+        depends_on: 
+            - db
+        networks: 
+            - aspsqlnet
+        ports:
+            - "8080:80"
+        environment: 
+            - DBHOST=db
+            - DBNAME=sql-docker
+            - DBPORT=1433
+            - DBUSERNAME=SA
+            - DBPASSWORD=Sql!Expre55
+            - ASPNETCORE_ENVIRONMENT=Development
+volumes: 
+    sqldatavol:
+networks: 
+    aspsqlnet:
